@@ -58,7 +58,7 @@ class BaseGPTModel(language_model.LanguageModel):
       *,
       max_tokens: int = language_model.DEFAULT_MAX_TOKENS,
       terminators: Collection[str] = language_model.DEFAULT_TERMINATORS,
-      temperature: float = 1.0,  # GPT-5 only supports temperature 1.0
+      temperature: float = 0.2,  # GPT-5 only supports temperature 1.0
       top_p: float = language_model.DEFAULT_TOP_P,
       timeout: float = language_model.DEFAULT_TIMEOUT_SECONDS,
       seed: int | None = None,
@@ -116,7 +116,7 @@ class BaseGPTModel(language_model.LanguageModel):
       *,
       max_tokens: int = language_model.DEFAULT_MAX_TOKENS,
       terminators: Collection[str] = language_model.DEFAULT_TERMINATORS,
-      temperature: float = 1.0,  # GPT-5 only supports temperature 1.0
+      temperature: float = 0.2,  # GPT-5 only supports temperature 1.0
       top_p: float = language_model.DEFAULT_TOP_P,
       top_k: int = language_model.DEFAULT_TOP_K,
       timeout: float = language_model.DEFAULT_TIMEOUT_SECONDS,
