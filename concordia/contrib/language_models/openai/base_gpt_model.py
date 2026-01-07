@@ -49,11 +49,13 @@ class BaseGPTModel(language_model.LanguageModel):
     self._verbosity = _DEFAULT_VERBOSITY
     if 'gpt-4o' in self._model_name:
       self._verbosity = 'medium'  # GPT-4o only supports verbosity 'medium'
+    #elif 'gpt-4' in self._model_name:
+      #self.reasoning_effort = ""
 
   def _sample_text(
       self,
       prompt: str,
-      reasoning_effort: str,
+      #reasoning_effort: str,
       verbosity: str,
       *,
       max_tokens: int = language_model.DEFAULT_MAX_TOKENS,
@@ -97,7 +99,7 @@ class BaseGPTModel(language_model.LanguageModel):
         max_completion_tokens=max_tokens,
         timeout=timeout,
         seed=seed,
-        reasoning_effort=reasoning_effort,
+        #reasoning_effort=reasoning_effort,
         verbosity=verbosity,
     )
 
@@ -125,7 +127,7 @@ class BaseGPTModel(language_model.LanguageModel):
     del top_k  # Unused
     return self._sample_text(
         prompt=prompt,
-        reasoning_effort='low', #'medium',#minimal',
+        #reasoning_effort='low', #'medium',#minimal',
         verbosity=self._verbosity,
         max_tokens=max_tokens,
         terminators=terminators,
