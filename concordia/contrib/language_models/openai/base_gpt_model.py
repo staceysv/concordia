@@ -125,7 +125,7 @@ class BaseGPTModel(language_model.LanguageModel):
     del top_k  # Unused
     return self._sample_text(
         prompt=prompt,
-        reasoning_effort='medium',#minimal',
+        #reasoning_effort='medium',#minimal',
         verbosity=self._verbosity,
         max_tokens=max_tokens,
         terminators=terminators,
@@ -155,7 +155,7 @@ class BaseGPTModel(language_model.LanguageModel):
     for attempts in range(_MAX_MULTIPLE_CHOICE_ATTEMPTS):
       answer = self._sample_text(
           prompt,
-          reasoning_effort='medium',
+          #reasoning_effort='medium',
           verbosity=self._verbosity,
           temperature=1.0,
           seed=seed,
