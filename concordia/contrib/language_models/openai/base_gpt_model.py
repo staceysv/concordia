@@ -125,7 +125,7 @@ class BaseGPTModel(language_model.LanguageModel):
     del top_k  # Unused
     return self._sample_text(
         prompt=prompt,
-        reasoning_effort='minimal',
+        reasoning_effort='medium',#minimal',
         verbosity=self._verbosity,
         max_tokens=max_tokens,
         terminators=terminators,
